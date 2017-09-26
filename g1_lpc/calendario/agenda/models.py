@@ -35,9 +35,10 @@ class Compromisso(models.Model):
         return self.nome 
 
 class UsuarioCompromisso(models.Model):
-     usuario = models.ForeignKey(User)
-     compromisso = models.ForeignKey(Compromisso)
-     aceite = models.BooleanField(default=True,verbose_name='Você aceita o convite')
+    proprietario = models.ForeignKey(User, related_name='Proprietario')
+    convidado = models.ForeignKey(User, related_name='Convidado')
+    compromisso = models.ForeignKey(Compromisso)
+    aceite = models.BooleanField(default=True,verbose_name='Você aceita o convite')
 
-     def __str__(self):
-         return "Usuário: {} Compromisso: {}".format(self.usuario,self.compromisso)
+    def __str__(self):
+        return "Usuário: {} Compromisso: {}".format(self.usuario,self.compromisso)
