@@ -1,11 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from agenda.models import AgendaPublica, AgendaPrivada,AgendaInstitucional,Compromisso,Usuario
+from agenda.models import Agenda,Compromisso
 
 
-admin.site.register(AgendaPublica)
-admin.site.register(AgendaPrivada)
-admin.site.register(AgendaInstitucional)
+admin.site.register(Agenda)
 admin.site.register(Compromisso)
-admin.site.register(Usuario)
